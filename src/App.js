@@ -1,25 +1,65 @@
-import logo from './logo.svg';
+import React, { useState } from 'react'
 import './App.css';
+import Register from './components/Register'
+import Login from './components/Login'
+import Navbar from './components/Navbar'
+import { Container, Row, Col } from 'reactstrap';
 
 function App() {
+
+  const [userEmail, setUserEmail] = useState('')
+  const [userName, setUserName] = useState('')
+  const [userPassword, setUserPassword] = useState('')
+  const [Bearer, setBearertoken ]= useState('')
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>
+        <Navbar />
+      </div>
+
+
+      Sign up
+      <Register
+        setUserEmail={setUserEmail}
+        userEmail={userEmail}
+        setUserName={setUserName}
+        userName={userName}
+        setUserPassword={setUserPassword}
+        userPassword={userPassword}
+      />
+
+      <div>
+      login
+        <Login
+          setUserEmail={setUserEmail}
+          userEmail={userEmail}
+
+          setBearertoken= {setBearertoken}
+          Bearer= {Bearer}
+
+         
+         
+          setUserPassword={setUserPassword}
+          userPassword={userPassword}
+
+        />
+      </div>
+
     </div>
+
   );
+
+
 }
 
 export default App;
+  //   <Login?
+    //     setUserEmail={setUserEmail}
+    //     userEmail={userEmail}
+    //     setUserName={setUserName}
+    //     userName={userName}
+    //     setUserPassword={setUserPassword}
+    //     userPassword={userPassword}
+    //   />
+    // </div>,
